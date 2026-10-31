@@ -19,7 +19,7 @@ init('JavaScript - Template Literals')
 
 // 🐶 affiche le liblélé “Le nombre le plus grand entre 5 10 200 est 200 !”
 // à l'écran avec 'displayText'
-    let display = `Le nombre le plus grand entre ${FIRST_VAL} ${SECOND_VAL} ${THIRD_VAL} est ${MaxNumber}`;
+    let display = `Le nombre le plus grand entre ${FIRST_VAL} ${SECOND_VAL} ${THIRD_VAL} est ${MaxNumber} !`;
     displayText(display);
 };
 export default () => <App exercice={exercice} />;
