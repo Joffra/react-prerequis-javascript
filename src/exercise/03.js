@@ -15,11 +15,23 @@ const type = 'footbal'
 // 🐶 Créé un object `terrainFoot` avec les propietes `longueur` et `largeur` initialisés avec les constantes ci-dessus
 // en utilisant les shorthand property names
 
+const terrainFoot = {longueur, largeur, type};
+
 // 🐶 Créé un object `terrainBasket` avec les propietes `longueur` 28 et `largeur` 15 (sans créer de variables intermédiaires)
+
+const terrainBasket = {longueur: 28, largeur: 15, type: 'basket'};
 
 // 🐶 Créé une fonction `calculAir` avec 1 paramètre : le terrain (utilise la décomposition)
 // 🐶 affiche avec `displayText` : "La surface du terrain de footbal/basket est x m² "
 
+function calculAir(terrain){
+    const {longueur, largeur, type} = terrain;
+    let display = `La surface du terrain de ${type} est ${longueur * largeur} m² `;
+    displayText(display);
+}
+
 // 🐶 Appelle cette fonction avec le terrain de footbal puis de basket
+calculAir(terrainFoot);
+calculAir(terrainBasket);
 };
 export default () => <App exercice={exercice} />;
