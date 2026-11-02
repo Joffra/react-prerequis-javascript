@@ -14,5 +14,13 @@ init('Fonctions fléchées')
 
 // 🐶 appelle la fonction calculEnergie avec 5 grammes (0.005 kg)
 // et affiche le résultat à l'ecran avec displayText
+
+const calculEnergie = (masse, celerite) => Math.round((masse * Math.pow(celerite, 2)));
+
+displayText(
+    `L'energie d'une masse de 0.005 kg et ${calculEnergie(0.005, 30000000)} joules`
+);
+
+
 };
 export default () => <App exercice={exercice} />;
