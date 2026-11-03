@@ -16,7 +16,8 @@ const personne = {nom: 'mike', adresse}
 
 const checkCountryCode = personne => {
   if (
-    personne.adresse.ville.countryCode === personne.adresse.pays.countryCode
+    personne?.adresse?.ville?.countryCode === 
+    personne?.adresse?.pays?.countryCode
   ) {
     return true
   } else {
@@ -24,18 +25,24 @@ const checkCountryCode = personne => {
   }
 }
 // 🐶 Utilise une ternaire en une seul ligne à la place de ce if/else
-if (checkCountryCode(personne)) {
-  displayText('le countryCode ville et pays sont identiques ')
-} else {
-  displayText('le countryCode ville et pays sont differents ')
-}
+// if (checkCountryCode(personne)) {
+//   displayText('le countryCode ville et pays sont identiques ')
+// } else {
+//   displayText('le countryCode ville et pays sont differents ')
+// }
+
+displayText(
+  checkCountryCode(personne) 
+  ? "le countryCode ville et pays sont identiques" 
+  : "Le countryCode ville et pays sont differents",
+)
 
 // 🐶 getPaysOrDefault retourne un Pays si le pays est renseigné,
 // sinon retourne le pays france par default {nom: "France", countryCode : "FR"}
 // utilise le Nullish coalishing
 // 🤖 let nameSafe = name ?? "anonyme"
 const getPaysOrDefault = personne => {
-  return personne.adresse.pays
+  return personne.adresse.pays ?? {nom: "France", countryCode : "FR"}; 
 }
 displayText(`Le pays est ${getPaysOrDefault(personne).nom}`)
 };
