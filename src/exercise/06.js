@@ -42,25 +42,36 @@ const computers = [
 // `Mon ordinateur préferé est le MacBook Pro`
 // 🤖 en passant par la méthode find
 
-displayText(`Mon ordinateur préferé est le`)
+const found = computers.find((computer) => computer.id === 'pc-1');
+
+displayText(`Mon ordinateur préferé est le ${found.name}`);
 
 // 🐶 Code ce qui permet de savoir s'il il y a au moins un ssd-500go
 // 🤖 en passant par la méthode `some`
 
-displayText(`Y a t-il au moins un pc avec un ssd-500go ? :  `)
+const element = computers.some((computer) => computer.features.includes('ssd-500go'));
+
+displayText(`Y a t-il au moins un pc avec un ssd-500go ? : ${element} `);
 
 // 🐶 Code ce qui permet de savoir s'il il y a que des ssd-500go
 // 🤖 en passant par la méthode `every`
 
-displayText(`Tous les pc ont un ssd-500go ? : `)
+const everyPC = computers.every((computer) => computer.features.includes('ssd-500go'));
+
+displayText(`Tous les pc ont un ssd-500go ? : ${everyPC}`);
 
 // 🐶 Affiche la liste des ids
 // 🤖 en passant par la méthode `map`
-displayText(`Tous les ids `)
+
+const allIds = computers.map((computer) => computer.id)
+
+displayText(`Tous les ids ${allIds}`);
 
 // 🐶 Récuperer la liste des pc avec une webcam
 // 🤖 en passant par la méthode `filter`
 
-displayText(`Les pc avec webcam : `)
+const PcWebcam = computers.filter((computer) => computer.features.includes('webcam'));
+
+displayText(`Les pc avec webcam : ${PcWebcam.map(element => element.name)},`);
 };
 export default () => <App exercice={exercice} />;
